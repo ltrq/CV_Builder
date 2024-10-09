@@ -1,38 +1,191 @@
-.App {
+/* App.css */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+/* Main container */
+.container {
+  display: flex;
+  width: 100%;
+  max-width: 1200px;
+  margin: 20px auto;
+}
+
+/* Sidebar styling */
+.sidebar {
+  width: 300px;
+  background-color: #fff;
+  max-height: 100vh; /* Make it full height but limit the overflow */
+  padding: 20px;
+  overflow-y: auto; /* Enable vertical scrolling */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar::-webkit-scrollbar {
+  display: none; /* Hides scrollbar */
+}
+
+.button-container {
+  top: 20px; /* Distance from the top of the sidebar */
+  z-index: 10; /* Ensure it's on top of other content */
+  padding: 10px; /* Padding around the buttons */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff; /* Ensure the background is solid */
+}
+
+.button-container button {
+  padding: 8px 12px; /* Padding for buttons */
+  margin-right: 15px; /* Space between buttons */
+  color: white; /* Button text color */
+  border-radius: 4px; /* Rounded corners for buttons */
+  cursor: pointer; /* Pointer cursor on hover */
+}
+
+.button-container button:hover {
+  background-color: #777; /* Darken on hover */
+}
+
+/* Main content area styling */
+.main-content {
+  flex-grow: 1;
+  background-color: #fff;
+  padding: 20px;
+  margin-left: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Personal details styling */
+.personal-details h2 {
+  margin-bottom: 10px;
+  font-size: 24px;
+}
+
+.info-block {
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 15px;
+  margin-bottom: 20px;
+}
+
+/* Input styling */
+input[type="text"] {
+  width: calc(100% - 20px);
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #ffffff; /* Input background color */
+}
+
+/* Button styling */
+button {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  background-color: #007BFF;
+  color: white;
+  cursor: pointer;
+  margin-bottom: 20px; /* Added margin for spacing */
+  transition: background-color 0.3s ease; /* Smooth background transition */
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* Education and Experience section */
+.section {
+  margin-bottom: 20px;
+}
+
+.education,
+.experience {
+  margin-top: 10px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+/* Specific styling for hidden elements */
+.hidden {
+  display: none;
+}
+
+/* Template styling */
+.template-container {
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  margin-top: 20px; /* Space between main content and template */
+}
+
+/* Title styling */
+.template-title {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #007BFF; /* Bootstrap Primary Color */
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+
+
+/* Profile section */
+.profile-section {
+  margin-bottom: 20px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.profile-section h2 {
+  margin-bottom: 10px;
+  font-size: 24px;
+  color: #007BFF; /* Bootstrap Primary Color */
+}
+
+/* Education and Work Experience items */
+.education-item,
+.work-experience-item {
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+}
+
+/* Strong text styling */
+strong {
+  color: #333; /* Dark color for emphasis */
+}
+
+/* Section headers */
+h2 {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  font-size: 22px;
+  color: #007BFF; /* Bootstrap Primary Color */
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
   }
-}
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  .sidebar {
+    width: 100%;
+    margin-bottom: 20px; /* Space between sidebar and main content */
   }
-  to {
-    transform: rotate(360deg);
+
+  .main-content {
+    margin-left: 0; /* Remove left margin on small screens */
   }
 }
